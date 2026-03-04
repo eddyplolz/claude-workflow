@@ -1,0 +1,14 @@
+# Gitleaks configuration
+# https://github.com/gitleaks/gitleaks
+
+title = "claude-workflow gitleaks config"
+
+[allowlist]
+  # Paths that should never be scanned (test fixtures, samples, etc.)
+  paths = [
+    '''\.git/hooks/.*\.sample$''',
+    '''node_modules/''',
+    '''venv/''',
+    '''\.venv/''',
+    '''__pycache__/''',
+  ]

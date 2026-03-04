@@ -39,7 +39,7 @@
 
 ## Proven Constraints
 
-These come from real correction patterns. Follow them explicitly:
+These come from real correction patterns. Follow them:
 
 - **Minimal error handling:** Let errors surface. No silent try/catch. Only catch with meaningful recovery.
 - **Update changelog before committing** any user-visible behavior change.

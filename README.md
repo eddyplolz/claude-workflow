@@ -1,6 +1,6 @@
 # claude-workflow
 
-A workflow system for [Claude Code](https://docs.anthropic.com/en/docs/claude-code) that handles session continuity, correction tracking, structured reviews, and disciplined commits. Built from real usage over months of daily work, not from a weekend brainstorm.
+A workflow system for [Claude Code](https://docs.anthropic.com/en/docs/claude-code) that handles session continuity, correction tracking, structured reviews, and disciplined commits. Built from months of daily use, not a weekend brainstorm.
 
 ## Why this exists
 
@@ -51,6 +51,8 @@ What it solves:
                     └──── lessons.md ← corrections ──────┘
 ```
 
+The resume/done cycle works best with [Memory MCP](https://github.com/modelcontextprotocol/servers/tree/main/src/memory) for cross-session memory. Without it, everything falls back to handoff files in `codex/` - still works, just less automatic.
+
 ## Quick install
 
 ```bash
@@ -67,6 +69,8 @@ cp claude-workflow/.gitleaks.toml /path/to/your/project/
 # Edit CLAUDE.md - set your workspace root, test commands, GitHub repo
 # Edit lessons.md - replace examples with your own (or start empty)
 ```
+
+If you want session memory to persist across conversations, set up [Memory MCP](https://github.com/modelcontextprotocol/servers/tree/main/src/memory). It's optional but makes `/resume` much better.
 
 See [QUICKSTART.md](QUICKSTART.md) for the full setup guide.
 

@@ -33,10 +33,10 @@ After copying, update these files:
 
 Open `CLAUDE.md` and replace the placeholders:
 
-- `<your-workspace-root>` -your project's absolute path
-- `<your-org>/<your-repo>` -your GitHub repository
-- `<your-test-command>` -how to run tests (e.g., `python -m pytest`, `npm test`)
-- `<your-lint-command>` -how to lint (e.g., `python -m flake8`, `npm run lint`)
+- `<your-workspace-root>` - your project's absolute path
+- `<your-org>/<your-repo>` - your GitHub repository
+- `<your-test-command>` - how to run tests (e.g., `python -m pytest`, `npm test`)
+- `<your-lint-command>` - how to lint (e.g., `python -m flake8`, `npm run lint`)
 
 Add any project-specific rules under the existing sections.
 

@@ -1,4 +1,4 @@
-# Quickstart Guide
+# Quickstart guide
 
 ## Prerequisites
 
@@ -33,10 +33,10 @@ After copying, update these files:
 
 Open `CLAUDE.md` and replace the placeholders:
 
-- `<your-workspace-root>` — your project's absolute path
-- `<your-org>/<your-repo>` — your GitHub repository
-- `<your-test-command>` — how to run tests (e.g., `python -m pytest`, `npm test`)
-- `<your-lint-command>` — how to lint (e.g., `python -m flake8`, `npm run lint`)
+- `<your-workspace-root>` -your project's absolute path
+- `<your-org>/<your-repo>` -your GitHub repository
+- `<your-test-command>` -how to run tests (e.g., `python -m pytest`, `npm test`)
+- `<your-lint-command>` -how to lint (e.g., `python -m flake8`, `npm run lint`)
 
 Add any project-specific rules under the existing sections.
 
@@ -74,7 +74,7 @@ The session continuity system works best with [Memory MCP](https://github.com/mo
 
 ## How the skills work
 
-All skills are invoked as slash commands in Claude Code:
+All skills are slash commands in Claude Code:
 
 | Command | When to use |
 |---------|------------|
@@ -92,12 +92,12 @@ All skills are invoked as slash commands in Claude Code:
 
 A typical work session:
 
-1. **Start:** `/resume` — restores context from last session
-2. **Work:** Write code, fix bugs, build features
-3. **Save:** `/commit` — stages, commits, checks context health
-4. **Wrap up:** `/done` — creates summary, logs corrections, writes handoff
+1. `/resume` - restores context from last session
+2. Write code, fix bugs, build features
+3. `/commit` - stages, commits, checks context health
+4. `/done` - creates summary, logs corrections, writes handoff
 
-The `/done` skill captures any mistakes you corrected during the session into `lessons.md`. The `/resume` skill reads those lessons at the start of the next session. This creates a learning loop.
+`/done` captures any mistakes you corrected during the session into `lessons.md`. Next time, `/resume` reads those lessons before you start. So corrections stick around.
 
 ## Adding your own skills
 
@@ -123,11 +123,11 @@ description: Use when [specific trigger condition]. [Brief what-it-does.]
 [Core workflow steps here]
 ```
 
-**Key rule:** The description should say **when** to trigger the skill, not how it works internally. This prevents the agent from skipping the skill content.
+The description should say *when* to trigger the skill, not how it works internally. If you put the behavior in the description, the agent thinks it already knows and skips the actual skill content.
 
 ## Adding your own rules
 
-Create `.md` files in `.claude/rules/`. They're auto-loaded into every conversation. Keep them short and actionable — rules that are too long get ignored.
+Create `.md` files in `.claude/rules/`. They're auto-loaded into every conversation. Keep them short and actionable. Rules that are too long get ignored.
 
 ## Project structure
 

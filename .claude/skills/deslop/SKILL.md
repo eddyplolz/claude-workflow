@@ -3,7 +3,7 @@ name: deslop
 description: Use after writing or generating code to clean up AI artifacts. Targets obvious comments, unnecessary error handling, premature abstractions, and debug leftovers in the recent diff.
 ---
 
-# Deslop — AI Code Cleanup
+# Deslop - AI Code Cleanup
 
 Run a focused cleanup pass on recent changes, targeting patterns that AI code generation tends to produce.
 
@@ -58,17 +58,17 @@ Run a focused cleanup pass on recent changes, targeting patterns that AI code ge
 
 4. **Ask the user** which findings to fix (all, specific files, or skip).
 
-5. **Apply fixes** — edit each file, removing only the identified patterns.
+5. **Apply fixes** - edit each file, removing only the identified patterns.
 
 6. **Run tests** to confirm no behavior changed. If tests fail for a file, revert that file's changes immediately and report what happened.
 
-7. **Summary** — one line: what was removed and from how many files.
+7. **Summary** - one line: what was removed and from how many files.
 
 ## Guardrails
 
 - **NEVER** remove error handling at system boundaries (user input, external APIs, file I/O, network calls)
-- **NEVER** remove comments that explain *why* something is done — only remove comments that explain *what* the code does
-- **NEVER** change behavior — this is cosmetic cleanup only
+- **NEVER** remove comments that explain *why* something is done - only remove comments that explain *what* the code does
+- **NEVER** change behavior - this is cosmetic cleanup only
 - **NEVER** touch code outside the diff (pre-existing slop is out of scope unless user asks)
 - If unsure whether something is slop, leave it alone
 - If tests fail after a cleanup edit, revert and move on

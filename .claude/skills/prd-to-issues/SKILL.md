@@ -11,7 +11,7 @@ Break a PRD into independently-grabbable GitHub issues using vertical slices (tr
 
 ### 1. Locate the PRD
 
-Ask the user for the PRD — could be a GitHub issue number, a file in `codex/`, or pasted text.
+Ask the user for the PRD - could be a GitHub issue number, a file in `codex/`, or pasted text.
 
 If it's a GitHub issue, fetch with `gh issue view <number>`.
 
@@ -24,7 +24,7 @@ If you haven't already explored the codebase, do so to understand the current st
 Break the PRD into **tracer bullet** issues. Each issue is a thin vertical slice that cuts through ALL integration layers end-to-end, NOT a horizontal slice of one layer.
 
 Slices are tagged as:
-- **HITL** (Human-in-the-loop): Requires a human decision — architectural choice, design review, UX decision
+- **HITL** (Human-in-the-loop): Requires a human decision - architectural choice, design review, UX decision
 - **AFK** (Autonomous): Can be implemented and merged without human interaction
 
 Prefer AFK over HITL where possible.

@@ -1,4 +1,4 @@
-# Prompt Improver — Analysis Guide
+# Prompt Improver - Analysis Guide
 
 ## Dimension Details
 

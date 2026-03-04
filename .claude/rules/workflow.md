@@ -5,7 +5,7 @@
 **Use for:** 5+ file changes, new project creation, architectural redesign.
 **Skip for:** Single edits, bug fixes, clear instructions, routine changes.
 
-- Do NOT enter plan mode while parallel agents are running — it kills them.
+- Do NOT enter plan mode while parallel agents are running - it kills them.
 - No subagents in plan mode.
 - If stuck: ask "Should I exit plan mode and proceed?"
 - Before exiting: save plan to `codex/` or `plans/`.
@@ -23,7 +23,7 @@ For multi-feature projects:
 
 - **Bug fixes:** Always write a failing test that reproduces the bug before writing the fix. No exceptions.
 - **New features:** Ask "can I test the expected behavior before writing code?" If yes, write the test first.
-- **One test → one implementation.** Don't write all tests upfront — one cycle at a time.
+- **One test → one implementation.** Don't write all tests upfront - one cycle at a time.
 
 ## Pre-Commit Checklist
 
@@ -36,8 +36,8 @@ For multi-feature projects:
 ## Post-Commit Context Check
 
 After every successful commit, assess context health and tell the user:
-- ✅ **Clean** — safe to continue
-- ⚡ **Compact** — recommend `/smart-compact` before next task
-- 🔄 **Handoff** — recommend `/done` and fresh session
+- ✅ **Clean** - safe to continue
+- ⚡ **Compact** - recommend `/smart-compact` before next task
+- 🔄 **Handoff** - recommend `/done` and fresh session
 
 Do not skip this. Long-session degradation causes rule-forgetting, verification loops, and ignored instructions.

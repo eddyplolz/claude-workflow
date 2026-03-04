@@ -11,18 +11,18 @@ Quickly restore context from the last work session using Memory MCP + handoff do
 
 1. **Read Memory MCP knowledge graph** using `mcp__memory__read_graph`
 
-2. **Read `lessons.md`** — flag any lessons relevant to the project about to be worked on
+2. **Read `lessons.md`** - flag any lessons relevant to the project about to be worked on
 
-3. **Show project dashboard** — for each project entity, display:
+3. **Show project dashboard** - for each project entity, display:
    - Name and status (Active / Complete / Paused)
    - Deployment state (deployed, awaiting deployment, undeployed)
    - Deferred work count
    - Last known activity
 
 3. **Check git state:**
-   - `git status` — any uncommitted changes?
-   - `git branch` — what branch are we on?
-   - `git log --oneline -5` — recent commits
+   - `git status` - any uncommitted changes?
+   - `git branch` - what branch are we on?
+   - `git log --oneline -5` - recent commits
 
 4. **Show summary to user** in this format:
    ```
@@ -48,5 +48,5 @@ Quickly restore context from the last work session using Memory MCP + handoff do
 ## Notes
 
 - If Memory MCP is empty, fall back to scanning `projects/` directories for PROJECT.md, SPRINTS.md, handoff docs
-- Don't read every file — use Memory MCP as the primary source, handoff docs for detail
-- Keep the dashboard concise — the user wants to get to work, not read a report
+- Don't read every file - use Memory MCP as the primary source, handoff docs for detail
+- Keep the dashboard concise - the user wants to get to work, not read a report

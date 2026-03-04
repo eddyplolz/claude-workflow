@@ -32,9 +32,9 @@ The user provides their draft prompt after `/improve`. Example:
 
 3. **Generate 2-3 improved versions:**
 
-   **Option A: Minimal Fixes** — targeted fixes to weak areas only
-   **Option B: Comprehensive** — fuller rewrite improving all dimensions
-   **Option C: Structured** — formal version with headers/bullets (only if complex enough to warrant it)
+   **Option A: Minimal Fixes** - targeted fixes to weak areas only
+   **Option B: Comprehensive** - fuller rewrite improving all dimensions
+   **Option C: Structured** - formal version with headers/bullets (only if complex enough to warrant it)
 
    Show `**Changes:**` list under each option.
 
@@ -67,4 +67,4 @@ After selection, update the JSON. Set `preferred_style` after 3+ selections of s
 
 - Direct and constructive, not critical
 - Focus on what makes the prompt more effective
-- Keep analysis concise — the improved versions are the main value
+- Keep analysis concise - the improved versions are the main value

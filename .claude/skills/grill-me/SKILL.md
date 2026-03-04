@@ -5,7 +5,7 @@ description: Use before implementing features, writing PRDs, or making architect
 
 # Grill Me
 
-Interview the user relentlessly about their plan until you reach shared understanding — or challenge it through a specific reasoning mode.
+Interview the user relentlessly about their plan until you reach shared understanding - or challenge it through a specific reasoning mode.
 
 ## Step 1: Choose a Mode
 
@@ -18,7 +18,7 @@ After hearing the elevator pitch, ask:
 | **General Interview** (default) | Walk the full decision tree, branch by branch |
 | **Expose Assumptions** | Socratic questioning to surface hidden beliefs |
 | **Argue the Other Side** | Build the strongest opposing case |
-| **Find Failure Modes** | Pre-mortem — how does this break? |
+| **Find Failure Modes** | Pre-mortem - how does this break? |
 | **Red Team** | Adversarial stress-test of vulnerabilities |
 | **Test the Evidence** | Audit claims against actual evidence |
 
@@ -60,8 +60,8 @@ For each: simplest version, edge cases, failure scenarios, interactions with oth
 
 All challenge modes end with a five-part synthesis:
 
-1. **Steelmanned position** — the user's plan in its strongest form
-2. **Challenges raised** — the 3-5 strongest issues surfaced
-3. **User responses** — how each challenge was addressed (or not)
-4. **Revised position** — the improved plan incorporating insights
-5. **Recommended next steps** — concrete actions
+1. **Steelmanned position** - the user's plan in its strongest form
+2. **Challenges raised** - the 3-5 strongest issues surfaced
+3. **User responses** - how each challenge was addressed (or not)
+4. **Revised position** - the improved plan incorporating insights
+5. **Recommended next steps** - concrete actions

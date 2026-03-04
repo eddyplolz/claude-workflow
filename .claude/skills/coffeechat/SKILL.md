@@ -14,18 +14,18 @@ Write like you're talking to a friend over coffee. Be honest, specific, and prac
 ## Steps
 
 1. **Gather data** (run in parallel):
-   - `git log --oneline --since="2 weeks ago" --all` — recent commits across all branches
-   - `git log --format="%ai" --since="2 weeks ago" | head -20` — activity dates
-   - Read `lessons.md` — correction patterns
-   - Read Memory MCP graph — project statuses, deferred items
-   - List `projects/` directory — what's active
-   - Glob for `projects/*/codex/SESSION-*.md` — recent session summaries
-   - Glob for `projects/*/codex/HANDOFF-*.md` — handoff docs with deferred work
+   - `git log --oneline --since="2 weeks ago" --all` - recent commits across all branches
+   - `git log --format="%ai" --since="2 weeks ago" | head -20` - activity dates
+   - Read `lessons.md` - correction patterns
+   - Read Memory MCP graph - project statuses, deferred items
+   - List `projects/` directory - what's active
+   - Glob for `projects/*/codex/SESSION-*.md` - recent session summaries
+   - Glob for `projects/*/codex/HANDOFF-*.md` - handoff docs with deferred work
 
 2. **Read recent session summaries** (last 3-5 across all projects):
-   - Extract Follow-Up Tasks sections — these are promises we made
-   - Extract Open Questions — things left hanging
-   - Extract Lessons/Corrections — patterns from recent work
+   - Extract Follow-Up Tasks sections - these are promises we made
+   - Extract Open Questions - things left hanging
+   - Extract Lessons/Corrections - patterns from recent work
 
 3. **Analyze and synthesize** into these sections:
 
@@ -38,7 +38,7 @@ Write the report directly to the user in chat (not to a file). Use this structur
 #### What We've Been Up To
 - 2-4 sentences summarizing recent work across projects
 - Which projects got attention, which didn't
-- Plain English — "We spent most of our time on the API, building out endpoints and a test suite" not "14 commits across 8 files in src/api"
+- Plain English - "We spent most of our time on the API, building out endpoints and a test suite" not "14 commits across 8 files in src/api"
 
 #### Loose Ends
 - Scan ALL session summaries' Follow-Up Tasks for items that were never completed in a later session
@@ -53,7 +53,7 @@ Write the report directly to the user in chat (not to a file). Use this structur
   - Any recent corrections (last 2 weeks)?
   - Have old patterns stopped recurring? (That's progress!)
 - Be honest and specific: "I've been corrected about X three times now. Here's what I'm doing differently."
-- If no recent corrections: say that clearly — it means things are going well.
+- If no recent corrections: say that clearly - it means things are going well.
 
 #### How Our Workflow Is Going
 - Are we following our own rules? (Check CLAUDE.md rules against recent session behavior)
@@ -63,7 +63,7 @@ Write the report directly to the user in chat (not to a file). Use this structur
 - **Keep suggestions beginner-friendly.** Explain what a thing does before suggesting it.
 
 #### Project Health at a Glance
-A simple table — one row per active project:
+A simple table - one row per active project:
 
 | Project | Last Activity | Status | Needs Attention? |
 |---------|--------------|--------|-----------------|

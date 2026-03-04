@@ -1,45 +1,47 @@
 # claude-workflow
 
-A complete, battle-tested workflow system for [Claude Code](https://docs.anthropic.com/en/docs/claude-code). Not just skills — an integrated system for session continuity, correction learning, structured reviews, and disciplined commits.
+A workflow system for [Claude Code](https://docs.anthropic.com/en/docs/claude-code) that handles session continuity, correction tracking, structured reviews, and disciplined commits. Built from real usage over months of daily work, not from a weekend brainstorm.
 
-## What makes this different
+## Why this exists
 
-Most Claude Code skill collections are "persona prompts" — they tell Claude to act like an expert. This is a **workflow system** built from real usage patterns and real mistakes:
+Most Claude Code skill collections are persona prompts. They tell Claude to act like an expert. That's fine until your session ends and everything is gone.
 
-- **Session lifecycle** — resume context, work, commit, hand off, resume next time
-- **Correction learning** — every mistake becomes a rule in `lessons.md`, reviewed at session start
-- **Integrated skills** — skills know about each other (commit triggers deploy checks, done updates lessons)
-- **Battle-tested rules** — every constraint exists because something went wrong without it
-- **Progressive disclosure** — lean skill files with deeper reference docs loaded only when needed
-- **Trigger-only descriptions** — skill descriptions say *when* to activate, not *what* they do, preventing the agent from skipping the actual skill content
+This is a workflow system. It tracks what happened last session, what went wrong, what decisions were made, and what's left to do. Every rule in here exists because something actually broke without it.
 
-## What's inside
+What it solves:
 
-### 9 Skills
+- Sessions that start blank every time. The resume/done cycle carries context forward.
+- The same mistakes repeating. Corrections get logged to `lessons.md` and reviewed at session start.
+- Skills that don't know about each other. Commit triggers deploy checks. Done updates lessons. They're connected.
+- Rules that sound good but weren't earned. Every constraint here comes from a real correction.
 
-| Skill | Trigger | What it does |
-|-------|---------|-------------|
+## What's in it
+
+### 9 skills
+
+| Skill | When to use | What it does |
+|-------|------------|-------------|
 | `/resume` | Start of session | Restores context from Memory MCP, handoff docs, git state |
-| `/commit` | Ready to commit | Stages files, drafts conventional message, context health check |
-| `/done` | End of session | Creates session summary, updates lessons, writes handoff doc |
-| `/coffeechat` | Periodic (1-2 weeks) | Plain-English health check on projects, loose ends, patterns |
-| `/grill-me` | Before building something | Stress-tests plans via 6 modes: interview, assumptions, opposing case, failure modes, red team, evidence audit |
-| `/improve` | Before an important prompt | Analyzes prompt weaknesses, generates 2-3 improved versions |
-| `/deslop` | After generating code | Removes AI artifacts: obvious comments, unnecessary error handling, debug leftovers |
+| `/commit` | Ready to commit | Stages files, drafts message, checks context health |
+| `/done` | End of session | Creates summary, updates lessons, writes handoff doc |
+| `/coffeechat` | Every 1-2 weeks | Plain-English health check on projects and loose ends |
+| `/grill-me` | Before building something | Stress-tests plans (6 modes: interview, assumptions, opposing case, failure, red team, evidence) |
+| `/improve` | Before an important prompt | Analyzes weaknesses, generates 2-3 better versions |
+| `/deslop` | After generating code | Removes AI artifacts: obvious comments, pointless error handling, debug leftovers |
 | `/sprint-review` | After completing a feature | Severity-tiered code review, fix in priority order, handoff doc |
-| `/prd-to-issues` | Have a spec, need issues | Breaks PRD into vertical-slice GitHub issues with dependency ordering |
+| `/prd-to-issues` | Have a spec, need issues | Breaks a PRD into vertical-slice GitHub issues with dependency ordering |
 
-### 4 Rules (auto-loaded from `.claude/rules/`)
+### 4 rules (auto-loaded from `.claude/rules/`)
 
-- **testing.md** — test before commit, browser testing patterns, verification discipline
-- **workflow.md** — plan mode, sprints, TDD, pre-commit checklist, post-commit context check
-- **tooling.md** — subagent access levels, spawn limits, failure handling
-- **session-continuity.md** — Memory MCP usage, handoff protocol, resume workflow
+- **testing.md** - test before commit, browser testing patterns, verification discipline
+- **workflow.md** - plan mode, sprints, TDD, pre-commit checklist, post-commit context check
+- **tooling.md** - subagent access levels, spawn limits, failure handling
+- **session-continuity.md** - Memory MCP usage, handoff protocol, resume workflow
 
-### 2 Hooks
+### 2 hooks
 
-- **context-monitor.py** — warns when context window is filling up (PostToolUse)
-- **pre-commit-checks.py** — reminds about deployment after commits to deployed projects (PreToolUse)
+- **context-monitor.py** (PostToolUse) - warns when context window is filling up
+- **pre-commit-checks.py** (PreToolUse) - reminds about deployment after commits to deployed projects
 
 ### Session lifecycle
 
@@ -62,23 +64,21 @@ cp claude-workflow/lessons.md /path/to/your/project/
 cp claude-workflow/.gitleaks.toml /path/to/your/project/
 
 # 3. Customize
-# Edit CLAUDE.md — set your workspace root, test commands, GitHub repo
-# Edit lessons.md — replace examples with your own (or start empty)
+# Edit CLAUDE.md - set your workspace root, test commands, GitHub repo
+# Edit lessons.md - replace examples with your own (or start empty)
 ```
 
 See [QUICKSTART.md](QUICKSTART.md) for the full setup guide.
 
-## Design principles
+## How it was built
 
-1. **Trigger-only descriptions** — skill descriptions say *when* to use them, not *how*. This prevents the agent from thinking it already knows what to do and skipping the skill content.
+Two things shaped this:
 
-2. **Progressive disclosure** — core workflow in SKILL.md (~60-80 lines), detailed reference material in `reference/` subdirectories loaded on demand. Saves tokens.
+**Trigger-only skill descriptions.** Skill descriptions say *when* to activate, not *what* they do. If you describe the behavior in the description, the agent thinks it already knows and skips the actual skill content. Learned this the hard way.
 
-3. **Correction-driven rules** — every rule in CLAUDE.md's "Proven Constraints" section exists because something went wrong without it. Rules aren't theoretical — they're earned.
+**Correction-driven rules.** Every rule in CLAUDE.md's "Proven Constraints" section is there because something went wrong without it. They're not best practices from a blog post. They're scars.
 
-4. **First fix wins** — when the user accepts output, stop. Don't iterate unless asked.
-
-5. **Minimal error handling** — let errors surface. No silent try/catch. Only catch with meaningful recovery.
+Other stuff that matters: progressive disclosure (core workflow in ~60-80 line SKILL.md files, reference material loaded on demand), first-fix-wins (when the user accepts output, stop), minimal error handling (let errors surface, don't silently swallow them).
 
 ## License
 

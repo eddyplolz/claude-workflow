@@ -37,7 +37,7 @@ Run a systematic code review, fix issues in priority order, and produce a handof
 
 ## Rules
 
-- Do NOT spawn parallel agents for file writing — do the work directly.
+- Do NOT spawn parallel agents for file writing - do the work directly.
 - If using agents for exploration, capture results from the task return value and write files yourself.
 - One failed agent approach = stop and do it manually.
 - Commit after each sprint of fixes, not at the end.

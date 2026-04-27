@@ -29,7 +29,7 @@ For multi-feature projects:
 
 - [ ] Test suite passes (run it, report the count)
 - [ ] All changes committed
-- [ ] Memory MCP updated
+- [ ] Auto-memory updated (if any user/project/feedback/reference facts changed)
 - [ ] User told what's done and what remains
 - [ ] For deployed projects: run `deploy.py --dry-run`
 

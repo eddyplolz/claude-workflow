@@ -124,13 +124,13 @@ Use this format and include every section:
 
 ### 5. Memory Update
 
-Update Memory MCP with changed project status, deferred work, deployment state, and key decisions.
+Update the auto-memory store at `C:\Users\polit\.claude\projects\C--Users-polit-Claude\memory\` per the system prompt's "auto memory" rules. Touch only the entry types that apply (`user` / `feedback` / `project` / `reference`). Add or update the pointer in `MEMORY.md` for any new or changed file.
 
-If Memory MCP is unavailable or stale:
+Skip if no facts worth persisting beyond this session emerged. Do not write speculative entries.
 
-- Trust the filesystem.
-- Continue with the handoff doc.
-- Record in the summary and final response that Memory MCP was not updated.
+Record in the final summary which auto-memory files were touched (or "None this session").
+
+Memory MCP knowledge graph is legacy — do not write to it from `/done` unless the user explicitly asks.
 
 ### 6. Post-Write Git Gate
 
@@ -232,7 +232,7 @@ Tell the user, concisely:
 - Push status and post-push ahead/behind result
 - Deploy dry-run/deploy status
 - Final dirty-tree status
-- Memory MCP status
+- Auto-memory files touched this session (or "None")
 - One-line resume prompt
 
 Use absolute file links for local files.
@@ -242,6 +242,6 @@ Use absolute file links for local files.
 - `/done` writes files after its first status check. The second dirty-tree gate is mandatory.
 - Hooks differ between Claude Code, Codex, and plain Git. Treat hooks as support, not the source of safety.
 - Missing gitleaks is a blocker, not a warning, when `/done` is committing or pushing.
-- Memory MCP can be stale. Disk state wins.
+- Auto-memory entries can drift from disk reality. Disk state wins; update or delete stale entries.
 - GitHub is backup/version control only. Deployment uses `deploy.py`, never GitHub.
 - Final "all done" is only true when summary, lessons, verification, commit/push/deploy status, and dirty-tree status have all been reported.

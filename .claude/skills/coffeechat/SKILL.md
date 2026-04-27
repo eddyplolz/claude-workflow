@@ -17,7 +17,7 @@ Write like you're talking to a friend over coffee. Be honest, specific, and prac
    - `git log --oneline --since="2 weeks ago" --all` - recent commits across all branches
    - `git log --format="%ai" --since="2 weeks ago" | head -20` - activity dates
    - Read `lessons.md` - correction patterns
-   - Read Memory MCP graph - project statuses, deferred items
+   - Auto-memory (`MEMORY.md` + `project_*.md` files) is already in context - pull project statuses and deferred items from there
    - List `projects/` directory - what's active
    - Glob for `projects/*/codex/SESSION-*.md` - recent session summaries
    - Glob for `projects/*/codex/HANDOFF-*.md` - handoff docs with deferred work
@@ -70,7 +70,7 @@ A simple table - one row per active project:
 | name | X days ago | brief status | yes/no + why |
 
 - Pull "last activity" from git log per project directory
-- Pull "status" from Memory MCP or most recent session summary
+- Pull "status" from auto-memory (`project_*.md`) or most recent session summary
 - "Needs attention" = has overdue follow-ups, no activity in 2+ weeks, or incomplete sprints
 
 #### Suggested Next Steps
@@ -88,4 +88,4 @@ A simple table - one row per active project:
 - **Celebrate progress.** If a project is in good shape, say it. If a pattern stopped recurring, note it.
 - **Keep it scannable.** Use short paragraphs, bullet points, and the table. Nobody wants to read an essay over coffee.
 - **Don't over-promise.** Suggestions should be realistic for the user's available time and interest.
-- **If data is missing** (no recent sessions, empty lessons.md, Memory MCP down), say so honestly rather than padding the report.
+- **If data is missing** (no recent sessions, empty lessons.md, sparse auto-memory), say so honestly rather than padding the report.

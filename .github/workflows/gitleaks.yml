@@ -1,0 +1,29 @@
+name: Secret scan (gitleaks)
+
+# Scans pushes and PRs for committed secrets using the shipped .gitleaks.toml.
+# Free for personal accounts and public repos. Org accounts may need a
+# GITLEAKS_LICENSE secret — see https://gitleaks.io for terms.
+
+on:
+  push:
+    branches: [master, main]
+  pull_request:
+    branches: [master, main]
+
+jobs:
+  gitleaks:
+    name: gitleaks
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # gitleaks needs full history to scan all commits
+
+      - name: Run gitleaks
+        uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITLEAKS_CONFIG: .gitleaks.toml
+          # Uncomment if you're on an org account and have a license:
+          # GITLEAKS_LICENSE: ${{ secrets.GITLEAKS_LICENSE }}

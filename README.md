@@ -61,16 +61,19 @@ git clone https://github.com/eddyplolz/claude-workflow.git
 
 # 2. Copy into your project
 cp -r claude-workflow/.claude /path/to/your/project/
+cp -r claude-workflow/.github /path/to/your/project/   # gitleaks CI workflow
 cp claude-workflow/CLAUDE.md /path/to/your/project/
 cp claude-workflow/lessons.md /path/to/your/project/
+cp claude-workflow/.gitignore /path/to/your/project/   # extend for your project
 cp claude-workflow/.gitleaks.toml /path/to/your/project/
 
 # 3. Customize
 # Edit CLAUDE.md - set your workspace root, test commands, GitHub repo
 # Edit lessons.md - replace examples with your own (or start empty)
+# Edit .gitignore - add anything project-specific
 ```
 
-If you want session memory to persist across conversations, set up [Memory MCP](https://github.com/modelcontextprotocol/servers/tree/main/src/memory). It's optional but makes `/resume` much better.
+Session memory persists automatically via Claude Code's built-in Auto-Memory store — no setup needed. [Memory MCP](https://github.com/modelcontextprotocol/servers/tree/main/src/memory) is supported as a legacy fallback if you already have it installed.
 
 See [QUICKSTART.md](QUICKSTART.md) for the full setup guide.
 

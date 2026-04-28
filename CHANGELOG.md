@@ -4,6 +4,15 @@ All notable changes to claude-workflow will be documented in this file.
 
 Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [1.2.0] - 2026-04-28
+
+### Added
+- **GitHub Actions workflow at `.github/workflows/gitleaks.yml`** — runs gitleaks on every push and PR using the shipped `.gitleaks.toml` config. Adopters get baseline secret-detection CI automatically. (Free for personal accounts and public repos; org accounts may need a `GITLEAKS_LICENSE` secret per gitleaks-action terms — instructions in the workflow file.)
+- **`README.md` install instructions** updated to copy `.gitignore` and `.github/` along with the rest of the template.
+
+### Changed
+- **`README.md` final Memory MCP reference** updated to describe Auto-Memory as canonical — completes the 1.1.0 migration (this reference was missed in the original sweep).
+
 ## [1.1.1] - 2026-04-28
 
 ### Added

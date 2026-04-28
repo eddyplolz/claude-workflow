@@ -36,7 +36,7 @@ What it solves:
 - **testing.md** - test before commit, browser testing patterns, verification discipline
 - **workflow.md** - plan mode, sprints, TDD, pre-commit checklist, post-commit context check
 - **tooling.md** - subagent access levels, spawn limits, failure handling
-- **session-continuity.md** - Memory MCP usage, handoff protocol, resume workflow
+- **session-continuity.md** - Auto-Memory (canonical), handoff protocol, resume workflow
 
 ### 2 hooks
 
@@ -51,7 +51,7 @@ What it solves:
                     └──── lessons.md ← corrections ──────┘
 ```
 
-The resume/done cycle works best with [Memory MCP](https://github.com/modelcontextprotocol/servers/tree/main/src/memory) for cross-session memory. Without it, everything falls back to handoff files in `codex/` - still works, just less automatic.
+The resume/done cycle uses Claude Code's built-in Auto-Memory store for cross-session memory (no plugin needed). [Memory MCP](https://github.com/modelcontextprotocol/servers/tree/main/src/memory) is supported as a legacy fallback. Without either, everything falls back to handoff files in `codex/` - still works, just less automatic.
 
 ## Quick install
 

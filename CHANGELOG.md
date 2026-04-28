@@ -4,6 +4,20 @@ All notable changes to claude-workflow will be documented in this file.
 
 Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [1.1.0] - 2026-04-28
+
+### Added
+- **Four hard rules backported to `CLAUDE.md`** from the canonical workspace, all general-purpose enough for any Claude Code user:
+  - `[FILE SAFETY]` — never delete or recommend deleting project files without explicit confirmation; default to moving or archiving.
+  - `[SECRETS]` — never approve a persistent `Bash` permission whose command contains a literal token/key/password; approve once-only or read from `.env`.
+  - `[GOAL DRIFT]` — before executing any item from a prior-session plan, restate the user's current goal and confirm the item still advances it.
+  - `[NO VERIFICATION LOOPS]` — tests passing IS verification; do not retake screenshots or use browser tools as iterative pre-commit checks.
+- **Orientation header on `CLAUDE.md`** describing the file as a portable Claude Code workflow distribution with pointer to `README.md`.
+
+### Changed
+- **README.md** now describes Claude Code's built-in Auto-Memory store as the canonical cross-session memory; Memory MCP is documented as a legacy fallback.
+- **session-continuity.md description** in README updated from "Memory MCP usage" to "Auto-Memory (canonical)".
+
 ## [1.0.0] - 2026-03-04
 
 Initial public release.

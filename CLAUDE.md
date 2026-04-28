@@ -1,5 +1,7 @@
 # Claude Workspace
 
+Portable Claude Code workflow distribution. Customize the `<angle-bracket>` placeholders below for your setup. See [README.md](README.md) for full install instructions.
+
 <!-- CUSTOMIZE: Replace placeholder values marked with <angle-brackets> -->
 
 ## Hard Rules
@@ -11,6 +13,10 @@
 5. **[FIRST FIX WINS]** When the user accepts output, stop. Do not iterate further unless asked.
 6. **[CORRECTIONS]** After ANY user correction: update `lessons.md` immediately, before doing anything else.
 7. **[EXTERNAL RESOURCES]** Check project's `codex/`, `reference/`, `exports/` BEFORE fetching URLs. If fetch fails, ask user to paste content.
+8. **[FILE SAFETY]** NEVER delete or recommend deleting project files/folders without explicit confirmation. Default to moving or archiving — not deleting.
+9. **[SECRETS]** NEVER approve a persistent `Bash` permission whose command string contains a literal secret (token/key/password). Approve **once-only** instead, or rewrite the command to read from `.env` (e.g. `set -a && source .env && set +a && <cmd>`). Inline secrets persist in `settings.local.json` indefinitely and have ended up in stashes/history before. Same rule applies to writing secrets into any tracked file — use `.env` or `*.local.*` patterns and verify the path is gitignored before writing.
+10. **[GOAL DRIFT]** Before executing any item from a prior-session plan, mentally restate the user's stated goal in one sentence and confirm the item advances it. Prior plans are inputs, not specs. If the gap between "what this item does" and "what the goal is" requires hand-waving to bridge, the item doesn't belong in this session — defer or drop.
+11. **[NO VERIFICATION LOOPS]** Tests passing IS verification. Use at most 1 screenshot per page-load confirmation. Do NOT loop through presets, retake screenshots after minor edits, or use browser tools as iterative pre-commit verification. After verification, commit.
 
 ---
 

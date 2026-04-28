@@ -4,6 +4,16 @@ All notable changes to claude-workflow will be documented in this file.
 
 Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [1.1.1] - 2026-04-28
+
+### Added
+- **`.gitignore` template** at repo root covering `.env`, `.claude/settings.local.json`, Python/Node build artifacts, OS junk, and editor caches. Closes the fail-open gap where adopters could accidentally commit credentials when cloning the template.
+- **"Secret hygiene" section in `QUICKSTART.md`** instructing adopters to verify `.gitignore` coverage, run `gitleaks detect` before first commit, and read the `[SECRETS]` rule.
+
+### Changed
+- **`QUICKSTART.md` section 4** now describes Auto-Memory as the canonical store (matching `README.md` 1.1.0).
+- **`commit` skill** now uses `Co-Authored-By: Claude` (model-agnostic) instead of stale `Claude Opus 4.6`.
+
 ## [1.1.0] - 2026-04-28
 
 ### Added

@@ -68,9 +68,15 @@ Add hook configuration to your `.claude/settings.local.json`:
 
 **Important:** Hook paths must be absolute. Relative paths break when Claude runs commands in subdirectories.
 
-### 4. Memory MCP (optional)
+### 4. Auto-Memory (built into Claude Code)
 
-The session continuity system works best with [Memory MCP](https://github.com/modelcontextprotocol/servers/tree/main/src/memory). Without it, the workflow falls back to handoff docs in `projects/[project]/codex/`.
+The session continuity system uses Claude Code's built-in Auto-Memory store for cross-session memory — no plugin needed. [Memory MCP](https://github.com/modelcontextprotocol/servers/tree/main/src/memory) is supported as a legacy fallback. Without either, the workflow falls back to handoff docs in `projects/[project]/codex/`.
+
+### 5. Secret hygiene (do this before your first push)
+
+- Verify `.gitignore` covers `.env`, `.claude/settings.local.json`, and anything containing credentials. The shipped `.gitignore` covers the common cases — extend it for your project's specifics.
+- Run `gitleaks detect` once before your first commit. The shipped `.gitleaks.toml` configures it.
+- Read the `[SECRETS]` rule in CLAUDE.md. Claude will follow it, but only if you don't push secrets first.
 
 ## How the skills work
 
